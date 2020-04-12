@@ -1,0 +1,1 @@
+"use strict";var _require=require("../models/user"),User=_require.User,auth=function(u,t,o){var s=u.cookies.x_auth;User.findByToken(s,function(r,e){if(r)throw r;if(!e)return t.json({isAuth:!1,error:!0});u.token=s,u.user=e,o()})};module.exports={auth:auth};
