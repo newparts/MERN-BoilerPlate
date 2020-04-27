@@ -21,7 +21,7 @@ var _require2 = require("./middleware/auth"),
 mongoose.connect(config.mongoURI, {
   useNewUrlParser: true
 }).then(function () {
-  return console.log('DB connected');
+  return console.log("DB connected");
 })["catch"](function (err) {
   return console.error(err);
 });
@@ -92,4 +92,7 @@ app.get("/api/user/logout", auth, function (req, res) {
     });
   });
 });
-app.listen(5013);
+var port = process.env.PORT || 5013;
+app.listen(port, function () {
+  console.log("Server Running on ${port}");
+});
