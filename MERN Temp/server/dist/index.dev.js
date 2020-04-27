@@ -30,6 +30,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.get("/", function (res, req) {
+  res.json({
+    "Hello": " Functioneaza"
+  });
+});
 app.get("/api/user/auth", auth, function (req, res) {
   res.status(200).json({
     _id: req._id,
