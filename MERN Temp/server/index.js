@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.get("/", (res, req) => {
+app.get("/", (req, res) => {
     res.json({"Hello": " Functioneaza"})
 })
 
@@ -27,7 +27,7 @@ app.get("/api/user/auth", auth, (req, res) => {
         email: req.user.email,
         name: req.user.name,
         lastname: req.user.lastname,
-        role:req.user.role
+        role: req.user.role
     })
 })
 
@@ -76,6 +76,8 @@ app.get("/api/user/logout", auth, (req, res) => {
         })
     })
 })
+
+
 const port = process.env.PORT || 5013
 
 app.listen(port, () => {

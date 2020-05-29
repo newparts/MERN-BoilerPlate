@@ -1,0 +1,1 @@
+"use strict";function _default(){return(1<arguments.length?arguments[1]:void 0).type,state}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=_default;
